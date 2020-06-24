@@ -1,6 +1,10 @@
 language: php
 
 branches:
+  except:
+    - master
+
+branches:
   only:
     - shieldon-psr-http
 
