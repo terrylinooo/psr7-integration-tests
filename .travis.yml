@@ -1,35 +1,35 @@
 language: php
 
+branches:
+  only:
+    - shieldon-psr-http
+
 sudo: false
 
 cache:
-    directories:
-        - $HOME/.composer/cache/files
+  directories:
+    - $HOME/.composer/cache/files
 
 php:
-    - 7.2
-    - 7.3
+  - 7.2
+  - 7.3
 
 env:
-    global:
-        - TEST_COMMAND="./vendor/bin/phpunit"
-    matrix:
-        - SUITE="Guzzle"
-        - SUITE="Laminas"
-        - SUITE="Slim"
-        - SUITE="Nyholm"
-        - SUITE="RingCentral"
+  global:
+    - TEST_COMMAND="./vendor/bin/phpunit"
+  matrix:
+    - SUITE="Shieldon"
 
 branches:
-    except:
-        - /^analysis-.*$/
-        - /^patch-.*$/
+  except:
+    - /^analysis-.*$/
+    - /^patch-.*$/
 
 before_install:
-    - iphpenv config-rm xdebug.ini || true
+  - iphpenv config-rm xdebug.ini || true
 
 install:
-    - travis_retry composer update --prefer-dist --no-interaction
+  - travis_retry composer update --prefer-dist --no-interaction
 
 script:
-    - $TEST_COMMAND --testsuite $SUITE
+  - $TEST_COMMAND --testsuite $SUITE

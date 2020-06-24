@@ -5,12 +5,16 @@
         "test",
         "psr-7"
     ],
-    "homepage": "http://php-http.org",
+    "homepage": "https://github.com/terrylinooo/psr-http",
     "license": "MIT",
     "authors": [
         {
             "name": "Tobias Nyholm",
             "email": "tobias.nyholm@gmail.com"
+        },
+        {
+            "name": "Terry Lin",
+            "email": "contact@terryl.in"
         }
     ],
     "require": {
@@ -19,13 +23,7 @@
         "psr/http-message": "^1.0",
         "shieldon/psr-http": "^1.2"
     },
-    "require-dev": {
-        "guzzlehttp/psr7": "^1.4",
-        "laminas/laminas-diactoros": "^2.1",
-        "nyholm/psr7": "^1.0",
-        "ringcentral/psr7": "^1.2",
-        "slim/psr7": "dev-master"
-    },
+    "require-dev": {},
     "extra": {
         "branch-alias": {
             "dev-master": "1.0-dev"
